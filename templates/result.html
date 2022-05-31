@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Hello Flask</h1>
+    <p>welcome to flask website</p>
+    <section>
+      <table border="1">
+        {% for key, value in result.items() %}
+        <tr>
+          <th>{{ key }}</th>
+          <th>{{ value }}</th>
+        </tr>
+        {% endfor %}
+      </table>
+    </section>
+  </body>
+</html>

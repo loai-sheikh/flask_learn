@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Hello Flask</h1>
+    <p>welcome to flask website</p>
+    <section>
+      <h3 style="text-align: center;">Contact form</h3>
+      {% with messages = get_flashed_messages() %} 
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %} 
+      {% endwith %} 
+      {% for message in form.name.errors %}
+      <div>
+        {{message}}
+      </div>
+
+      {% endfor %} 
+      {% for message in form.email.errors %}
+      <div>
+        {{message}}
+      </div>
+
+      {% endfor %}
+
+      <form action="/contact" method="post">
+        <fieldset>
+          <legend>Contact Form</legend>
+          {{ form.hidden_tag }}
+          <div style="font-size: 20px; font-weight:bold; margin-left:150px;">
+            {{form.name.label}}<br>
+            {{form.name}}<br>
+
+            {{form.gender.label}}<br>
+            {{form.gender}}<br>
+
+            {{form.age.label}}<br>
+            {{form.age}}<br>
+
+            {{form.address.label}}<br>
+            {{form.address}}<br>
+
+            {{form.email.label}}<br>
+            {{form.email}}<br>
+
+            {{form.language.label}}<br>
+            {{form.language}}<br>
+
+            {{form.submit}}
+
+          </div>
+        </fieldset>
+      </form>
+    </section>
+  </body>
+</html>

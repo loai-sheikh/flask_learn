@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Hello Flask</h1>
+    <p>welcome to flask website</p>
+    <section>
+      <h3>Log in</h3>
+      {% if error %}
+      <p>
+        <strong>Error:</strong>
+        {{error}}
+      </p>
+      {% endif %}
+      <form action="/login" method="post">
+        <dl>
+          <dt>username:</dt>
+          <dd>
+            <input
+              type="text"
+              name="username"
+              value="{{request.form.username}}"
+            />
+          </dd>
+          <dt>password:</dt>
+          <dd><input type="text" name="password" /></dd>
+        </dl>
+        <p><button type="submit">Login</button></p>
+      </form>
+    </section>
+  </body>
+</html>
